@@ -13,7 +13,7 @@ fun sesliKaldir( kelime:String):String{
     for (char in kelime) {
         if (!sesli.contains(char)) {
         sonuc+=char.toString()
-        // sonuc.append(char)
+        
         }
     }
 
