@@ -17,7 +17,7 @@ class Otomobil:Arac(){
     override val Arac_hizi: Int=150
 
     override var Yakit: String="Dizel"
-
+    var bagajHacmiLt:Int=600
     fun bagaj(){
         println("Bagaj Açıldı")
     }
