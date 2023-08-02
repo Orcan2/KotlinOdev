@@ -9,11 +9,46 @@ fun main(args: Array<String>) {
     var l= listOf<Int>(1,2,3,4,4,4,5,5,6,7)
     var a= arrayListOf<Int>(1,2,4,4,4,5,7)
     var s= hashMapOf(1 to 4,2 to 5,4 to 7)
+    //Soru11(a)
     Soru13(s)
     var ornek = mutableListOf<String>("elma,armut,kel, mahmut")
-    println(Soru11(a))
+    // println(Soru11(a))
     println("Program arguments: ${args.joinToString()}")
 }
+
+interface Drawable{
+    fun ciz(){
+        println("ciz")
+    }
+}
+class kalem():Drawable{
+    override fun ciz(){
+        println("ben cizerim")
+    }
+}
+class Silgi():Drawable{
+    override fun ciz(){
+        println("ben silerim")
+    }
+}
+interface calisan{
+    open fun maasHesapla()
+}
+class Mudur:calisan{
+     override fun maasHesapla(){
+        println("maasim 1500")
+    }
+}
+class memur:calisan{
+    override fun maasHesapla(){
+        println("maasim 1000")
+    }
+}
+
+
+
+
+
 //Soru1
 fun Soru1(liste:List<Int>){
     var top:Int=0
@@ -116,12 +151,12 @@ fun <K, V> Soru10(h1: HashMap<K, V>, h2: HashMap<K, V>): HashMap<K, V> {
 /*
 fun Soru11(liste:ArrayList<Int>):HashMap<Int,Int>{
     val hmap = HashMap<Int, Int>()
-    var adetlist= mutableListOf<Int>()
+    var adetlist= mutableListOf<Int>(liste.size)
     var tmp=0
     for(i in liste) {
         for (j in liste) {
-            if (i != j) {
-                if (adetlist[i] == adetlist[j]) {
+            if (i != j&&(i<=liste.size-1)&&j<=liste.size-1) {
+                if (liste[i] == liste[j]) {
                     adetlist[i] = tmp + 1
                 }
             }
@@ -130,7 +165,9 @@ fun Soru11(liste:ArrayList<Int>):HashMap<Int,Int>{
 
     }
     return hmap
-}*/
+}
+
+ */
 fun Soru12(h:HashMap<String,Int>):Int{
     var top:Int=0
     for(i in h){
