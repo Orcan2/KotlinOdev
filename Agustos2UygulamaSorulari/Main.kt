@@ -7,8 +7,11 @@ import java.util.HashSet
 fun main(args: Array<String>) {
     println("Hello World!")
     var l= listOf<Int>(1,2,3,4,4,4,5,5,6,7)
+    var a= arrayListOf<Int>(1,2,4,4,4,5,7)
+    var s= hashMapOf(1 to 4,2 to 5,4 to 7)
+    Soru13(s)
     var ornek = mutableListOf<String>("elma,armut,kel, mahmut")
-    println(Soru8(l))
+    println(Soru11(a))
     println("Program arguments: ${args.joinToString()}")
 }
 //Soru1
@@ -110,12 +113,44 @@ fun <K, V> Soru10(h1: HashMap<K, V>, h2: HashMap<K, V>): HashMap<K, V> {
     return hSon
 }
 //Soru11
-fun Soru11(liste:List<Int>):HashMap<String,Int>{
-    val hmap = HashMap<String, Int>()
-    hmap.put("listenin uzunlugu",liste.size)
+/*
+fun Soru11(liste:ArrayList<Int>):HashMap<Int,Int>{
+    val hmap = HashMap<Int, Int>()
+    var adetlist= mutableListOf<Int>()
+    var tmp=0
+    for(i in liste) {
+        for (j in liste) {
+            if (i != j) {
+                if (adetlist[i] == adetlist[j]) {
+                    adetlist[i] = tmp + 1
+                }
+            }
+            hmap.put(i, tmp)
+        }
+
+    }
     return hmap
+}*/
+fun Soru12(h:HashMap<String,Int>):Int{
+    var top:Int=0
+    for(i in h){
+        top+=i.value
+    }
+    return top
 }
+fun Soru13(h:HashMap<Int,Int>){
+    var hSonn:HashMap<Int,Int>
+    var enBuyuk=0
+    var anahtar=0
+    for (i in h){
+        if (i.value>=enBuyuk){
+            enBuyuk=i.value
+            anahtar=i.key
+        }
+    }
+    println(anahtar)
+    println(enBuyuk)
 
-
+}
 
 
