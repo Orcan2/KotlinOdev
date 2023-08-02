@@ -3,6 +3,7 @@
 import java.util.HashMap
 import java.util.HashSet
 
+
 fun main(args: Array<String>) {
     println("Hello World!")
     var l= listOf<Int>(1,2,3,4,4,4,5,5,6,7)
@@ -108,7 +109,12 @@ fun <K, V> Soru10(h1: HashMap<K, V>, h2: HashMap<K, V>): HashMap<K, V> {
     }
     return hSon
 }
-
+//Soru11
+fun Soru11(liste:List<Int>):HashMap<String,Int>{
+    val hmap = HashMap<String, Int>()
+    hmap.put("listenin uzunlugu",liste.size)
+    return hmap
+}
 
 
 
