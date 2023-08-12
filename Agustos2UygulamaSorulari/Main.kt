@@ -2,6 +2,7 @@
 
 import java.util.HashMap
 import java.util.HashSet
+import kotlin.concurrent.thread
 
 
 fun main(args: Array<String>) {
@@ -9,11 +10,12 @@ fun main(args: Array<String>) {
     var l= listOf<Int>(1,2,3,4,4,4,5,5,6,7)
     var a= arrayListOf<Int>(1,2,4,4,4,5,7)
     var s= hashMapOf(1 to 4,2 to 5,4 to 7)
-    //Soru11(a)
-    Soru13(s)
+    Soru18(a)
+    //Soru13(s)
     var ornek = mutableListOf<String>("elma,armut,kel, mahmut")
     // println(Soru11(a))
-    println("Program arguments: ${args.joinToString()}")
+   // println("Program arguments: ${args.joinToString()}")
+    //Soru17(l)
 }
 
 interface Drawable{
@@ -189,5 +191,34 @@ fun Soru13(h:HashMap<Int,Int>){
     println(enBuyuk)
 
 }
+fun Soru17(liste:List<Int>):Int{
+    var top=0
+    for (i in liste){
+        Thread.sleep(1000)
+        top+=i
+    }
+    Thread.sleep(2000)
+    return top
+
+}
+fun Soru18(dizi:List<Int>){
+    var k:Int=dizi[0]
+    var b:Int=dizi[0]
+    for (i in dizi){
+
+        if (i<=k){
+            Thread.sleep(100)
+            k=i
+        }
+        if (i>=b){
+            Thread.sleep(200)
+            b=i
+        }
+    }
+
+
+    println("en büyük sayı $b en küçük sayı $k")
+}
+
 
 
